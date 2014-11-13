@@ -24,6 +24,7 @@ public class BookServiceImpl implements BookService{
 	}
 	
 	
+	@Transactional
 	public void addBook(Book p) {
 		BookDao.addBook(p);		
 	}

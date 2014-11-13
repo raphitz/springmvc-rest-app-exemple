@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,19 +31,14 @@ public class BookController {
        return this.BookService.listBooks();
     }
      
-    //For add and update Book both
-    @RequestMapping(value= "/Book/add", method = RequestMethod.POST)
-    public String addBook(@ModelAttribute("Book") Book p){
-         
-        if(p.getId() == 0){
-            //new Book, add it
-            this.BookService.addBook(p);
-        }else{
 
-        }
-         
-        return "redirect:/Books";
-         
+    
+    
+    @RequestMapping(value = "/Book/add", method = RequestMethod.POST)
+    @ResponseBody
+    public  Book createBook(@RequestBody Book book) {
+    	 this.BookService.addBook(book);
+        return book;
     }
      
      
