@@ -9,6 +9,17 @@
 
 	<body>
 
+
+<form  ng-controller="myController" ng-submit="submitMyForm()">
+    <input ng-model="book.id"  />
+    <input ng-model="book.title"  />
+    <input ng-model="book.author"  />
+    <input ng-model="book.price"  />
+    <input ng-model="book.quantity"  />
+	 <input type="submit" id="submit" value="Submit" />
+ </form>
+ 
+<hr/>
 <div ng-controller="Hello">
  <table class="tg">
     <tr>

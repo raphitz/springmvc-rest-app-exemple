@@ -20,13 +20,14 @@ public class BookDAOImpl implements BookDAO{
 	 
 	public void addBook(Book p) {
 		Session session = this.sessionFactory.getCurrentSession();
-		session.persist(p);
+		session.save(p);
 
 	}
 
 
 	public List<Book> listBooks() {
 		Session session = this.sessionFactory.getCurrentSession();
+		
         List<Book> booksList = session.createQuery("from Book").list();
 		return booksList;
 	}
