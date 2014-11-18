@@ -13,6 +13,11 @@ public class BookServiceImpl implements BookService{
 	BookDAO BookDao;
 	
 	
+	@Transactional
+	public Book getBookById(int id) {
+		return this.BookDao.getBookById(id);
+		
+	}
 	
 	public void setBookDao(BookDAO BookDao) {
 		this.BookDao = BookDao;
@@ -25,13 +30,19 @@ public class BookServiceImpl implements BookService{
 	
 	
 	@Transactional
-	public void addBook(Book p) {
-		BookDao.addBook(p);		
+	public void addBook(Book b) {
+		BookDao.addBook(b);		
 	}
 
 	@Transactional
 	public List<Book> listBooks() {
 		return BookDao.listBooks();
 	}
+
+	@Transactional
+	public void removeBook(Book book) {
+	  BookDao.removeBook(book);		
+	}
+
 
 }
