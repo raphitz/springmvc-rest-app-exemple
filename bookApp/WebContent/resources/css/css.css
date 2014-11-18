@@ -1,4 +1,10 @@
-        .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
-        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-        .tg .tg-4eph{background-color:#f9f9f9}
+.modal-dialog{
+position: absolute;
+left: 30%;
+//now you must set a margin left under zero - value is a half width your window
+margin-left: -0px;
+// this same situation is with height - example
+height: 500px;
+top: 50%;
+margin-top: -250px;
+} or:#f9f9f9}

@@ -19,27 +19,33 @@ import com.med.service.BookService;
 public class BookController {
      
     private BookService BookService;
-     
-    @Autowired(required=true)
-    @Qualifier(value="BookService")
-    public void setBookService(BookService ps){
-        this.BookService = ps;
-    }
-     
+
     @RequestMapping(value = "/Books", method = RequestMethod.GET)  
     public @ResponseBody List<Book> listBooks(Model model) {
        return this.BookService.listBooks();
     }
      
 
-    
-    
     @RequestMapping(value = "/Book/add", method = RequestMethod.POST)
     @ResponseBody
-    public  Book createBook(@RequestBody Book book) {
+    public  String createBook(@RequestBody Book book) {
     	 this.BookService.addBook(book);
-        return book;
+        return "/bookDoc";
     }
      
      
+    
+   @Autowired(required=true)
+   @Qualifier(value="BookService")
+   public void setBookService(BookService ps){
+       this.BookService = ps;
+   }
+    
+   @RequestMapping(value = "/Book/remove", method = RequestMethod.POST)
+   public String removeAd(@RequestBody int  id) {
+	   
+       Book book  = this.BookService.getBookById(id);       
+       BookService.removeBook(book);
+       return "/bookDoc";
+   }
 }

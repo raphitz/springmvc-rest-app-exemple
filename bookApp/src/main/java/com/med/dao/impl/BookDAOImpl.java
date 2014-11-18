@@ -33,6 +33,18 @@ public class BookDAOImpl implements BookDAO{
 	}
 
 	
+	public void removeBook(Book book) {
+	
+	  Session session = this.sessionFactory.getCurrentSession();	
+      session.delete(book);
+      
+	}
+	
+	public Book getBookById(int id) {
+		  Session session = this.sessionFactory.getCurrentSession();	
+	      return (Book) session.get(Book.class, id);
+	}
+	
 	 public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
@@ -41,5 +53,6 @@ public class BookDAOImpl implements BookDAO{
 	 public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
+	 
 	 
 }

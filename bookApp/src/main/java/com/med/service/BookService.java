@@ -6,9 +6,12 @@ import com.med.model.Book;
 
 public interface BookService {
 	
-	public void addBook(Book p);
+	public Book getBookById(int id);
+	
+	public void addBook(Book book);
 
-
+	public void removeBook(Book book);
+	
 	public List<Book> listBooks();
 
 }
