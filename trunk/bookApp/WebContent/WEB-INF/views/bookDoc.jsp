@@ -24,19 +24,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">JPO SQLI</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
+                        <a href="#">Acceuil</a>
                     </li>
                 </ul>
             </div>
@@ -53,8 +47,8 @@
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header">Portfolio Item
-                    <small>Item Subheading</small>
+                <h3 class="page-header">Liste des livres
+                    <small></small>
                 </h3>
             </div>
         </div>
@@ -67,7 +61,7 @@
             
 <a href="#" class="btn btn-lg btn-success"
    data-toggle="modal"
-   data-target="#basicModal">Click to open Modal</a>
+   data-target="#basicModal">Ajouter un livre</a>
    
    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">
@@ -95,8 +89,8 @@
                         <input  ng-model="book.quantity" id="qte" value='' placeholder="quantité" type="text" class="form-control" />
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-danger btn-cancel-action" data-dismiss="modal">Cancel</button>
-                        <input type="submit" class="btn btn-primary" value="Login" />
+                        <button class="btn btn-danger btn-cancel-action" data-dismiss="modal">Quitter</button>
+                        <input type="submit" class="btn btn-primary" value="Ajouter" />
                     </div>
                 </form>
             </div>
@@ -131,8 +125,8 @@
                         <input  ng-model="book.quantity" id="qte" value='' placeholder="quantité" type="text" class="form-control" />
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-danger btn-cancel-action" data-dismiss="modal">Cancel</button>
-                        <input type="submit" class="btn btn-primary" value="Login" />
+                        <button class="btn btn-danger btn-cancel-action" data-dismiss="modal">Quitter</button>
+                        <input type="submit" class="btn btn-primary" value="Modifer" />
                     </div>
                 </form>
             </div>
@@ -149,28 +143,25 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">Related Projects</h3>
+                <h3 class="page-header">Liste des livres</h3>
               <div >
  <table class="table">
     <tr>
-        <th width="80">book ID</th>
-        <th width="120">book Title</th>
-        <th width="120">book Author</th>
-        <th width="60">Price</th>
-        <th width="60">Quantity</th>
-        <th width="60">Delete</th>
-        <th width="60">Delete</th>
+        <th width="120">Titre</th>
+        <th width="120">Auteur</th>
+        <th width="60">Prix</th>
+        <th width="60">Quantité</th>
+        <th width="60">Action</th>
     </tr>
         <tr ng-repeat="book in books">
-            <td>{{book.id}}</td>
             <td>{{book.title}}</td>
             <td>{{book.author}}</td>
             <td>{{book.price}}</td>
             <td>{{book.quantity}}</td>
             <td>
-            <button class="btn btn-danger"  ng-click="removeBook(book.id)" >X</button></td>
-            <td>
-            <button class="btn btn-danger"  ng-click="updateBookform(book)" >up</button></td>
+            <button class="btn btn-danger"  ng-click="removeBook(book.id)" >Supprimer</button>
+        
+            <button class="btn btn-danger"  ng-click="updateBookform(book)" >Modifier</button></td>
        </tr>
 </table>
 </div>  
@@ -190,7 +181,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>df 2014</p>
+                    <p>Journée portes ouvertes 2014</p>
                 </div>
             </div>
             <!-- /.row -->
