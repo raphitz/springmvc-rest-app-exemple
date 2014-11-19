@@ -14,5 +14,7 @@ public interface BookDAO {
 
 	public List<Book> listBooks();
 
+	public void updateBook(Book book);
+
 
 }

@@ -44,5 +44,10 @@ public class BookServiceImpl implements BookService{
 	  BookDao.removeBook(book);		
 	}
 
+	@Transactional
+	public void updateBook(Book book) {
+		BookDao.updateBook(book);
+	}
+
 
 }

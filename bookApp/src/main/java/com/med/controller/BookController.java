@@ -41,11 +41,19 @@ public class BookController {
        this.BookService = ps;
    }
     
+   
    @RequestMapping(value = "/Book/remove", method = RequestMethod.POST)
    public String removeAd(@RequestBody int  id) {
 	   
        Book book  = this.BookService.getBookById(id);       
        BookService.removeBook(book);
        return "/bookDoc";
+   }
+   
+   @RequestMapping(value = "/Book/update", method = RequestMethod.POST)
+   public String updateBook(@RequestBody Book  book) {
+	   
+	   BookService.updateBook(book);       
+	   return "/bookDoc";
    }
 }

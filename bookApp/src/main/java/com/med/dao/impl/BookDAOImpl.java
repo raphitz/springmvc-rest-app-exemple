@@ -53,6 +53,11 @@ public class BookDAOImpl implements BookDAO{
 	 public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
+
+	public void updateBook(Book book) {
+		  Session session = this.sessionFactory.getCurrentSession();	
+	      session.saveOrUpdate(book);      		
+	}
 	 
 	 
 }
