@@ -105,6 +105,41 @@
   </div>
 </div>
      
+        <div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+            <h4 class="modal-title" id="myModalLabel">Ajout d'un livre</h4>
+            </div>
+            <div class="modal-body">
+                <form ng-submit="updateBook()" >
+                    <div class="form-group">
+                        <label for="username-email">Titre</label>
+                        <input ng-model="book.title"  id="title" placeholder="Titre" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Auteur</label>
+                        <input ng-model="book.author" placeholder="Auteur" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Prix</label>
+                        <input ng-model="book.price" id="price" value='' placeholder="Prix" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="qte">Quantite</label>
+                        <input  ng-model="book.quantity" id="qte" value='' placeholder="quantité" type="text" class="form-control" />
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger btn-cancel-action" data-dismiss="modal">Cancel</button>
+                        <input type="submit" class="btn btn-primary" value="Login" />
+                    </div>
+                </form>
+            </div>
+
+    </div>
+  </div>
+</div>
      </div>
 
         </div>
@@ -124,6 +159,7 @@
         <th width="60">Price</th>
         <th width="60">Quantity</th>
         <th width="60">Delete</th>
+        <th width="60">Delete</th>
     </tr>
         <tr ng-repeat="book in books">
             <td>{{book.id}}</td>
@@ -133,6 +169,8 @@
             <td>{{book.quantity}}</td>
             <td>
             <button class="btn btn-danger"  ng-click="removeBook(book.id)" >X</button></td>
+            <td>
+            <button class="btn btn-danger"  ng-click="updateBookform(book)" >up</button></td>
        </tr>
 </table>
 </div>  

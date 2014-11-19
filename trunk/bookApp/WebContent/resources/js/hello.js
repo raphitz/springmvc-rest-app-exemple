@@ -9,6 +9,7 @@ function Hello($scope, $http) {
         $http.get('http://localhost:8081/bookApp/Books').
         success(function(data) {
             $scope.books = data;
+            console.log(data);
         });
 
     }
@@ -18,17 +19,40 @@ function Hello($scope, $http) {
         /* while compiling form , angular created this object*/
         var data=$scope.book;  
         /* post to server*/
-        $http.post('http://localhost:8081/bookApp/Book/add', data);  
+        $http.post('http://localhost:8081/bookApp/Book/add', data).success(function(data) {
+   		 $scope.init();
+        });
+        $scope.book = {};
         $('#basicModal').modal('hide');
-       $scope.init();
         
         }
     
     
     $scope.removeBook = function (id) {
 
-    	 $http.post('http://localhost:8081/bookApp/Book/remove', id);  
-    	 $scope.init();
+    	 $http.post('http://localhost:8081/bookApp/Book/remove', id).success(function(data) {
+    		 $scope.init();
+         });  
+	 
+    }
+    
+    $scope.updateBookform = function (book) {
+    	
+    	$scope.book=book;
+        $('#basicModal2').modal('show');
+    	
+    }
+    
+    $scope.updateBook = function (book) {
+    	
+    	 var data=$scope.book;  
+         /* post to server*/
+         $http.post('http://localhost:8081/bookApp/Book/update', data).success(function(data) {
+    		 $scope.init();
+         });
+         $scope.book = {};
+         $('#basicModal2').modal('hide');
+    	
     }
 }
 
