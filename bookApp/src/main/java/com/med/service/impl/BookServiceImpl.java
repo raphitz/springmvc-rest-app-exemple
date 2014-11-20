@@ -10,43 +10,43 @@ import com.med.service.BookService;
 
 public class BookServiceImpl implements BookService{
 
-	BookDAO BookDao;
+	BookDAO bookDao;
 	
 	
 	@Transactional
 	public Book getBookById(int id) {
-		return this.BookDao.getBookById(id);
+		return this.bookDao.getBookById(id);
 		
 	}
 	
 	public void setBookDao(BookDAO BookDao) {
-		this.BookDao = BookDao;
+		this.bookDao = BookDao;
 	}
 	
 	
 	public BookDAO getBookDao() {
-		return BookDao;
+		return bookDao;
 	}
 	
 	
 	@Transactional
 	public void addBook(Book b) {
-		BookDao.addBook(b);		
+		bookDao.addBook(b);		
 	}
 
 	@Transactional
 	public List<Book> listBooks() {
-		return BookDao.listBooks();
+		return bookDao.listBooks();
 	}
 
 	@Transactional
 	public void removeBook(Book book) {
-	  BookDao.removeBook(book);		
+	  bookDao.removeBook(book);		
 	}
 
 	@Transactional
 	public void updateBook(Book book) {
-		BookDao.updateBook(book);
+		bookDao.updateBook(book);
 	}
 
 

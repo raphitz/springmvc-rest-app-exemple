@@ -18,18 +18,18 @@ import com.med.service.BookService;
 @Controller
 public class BookController {
      
-    private BookService BookService;
+    private BookService bookService;
 
     @RequestMapping(value = "/Books", method = RequestMethod.GET)  
     public @ResponseBody List<Book> listBooks(Model model) {
-       return this.BookService.listBooks();
+       return this.bookService.listBooks();
     }
      
 
     @RequestMapping(value = "/Book/add", method = RequestMethod.POST)
     @ResponseBody
     public  String createBook(@RequestBody Book book) {
-    	 this.BookService.addBook(book);
+    	 this.bookService.addBook(book);
         return "/bookDoc";
     }
      
@@ -38,22 +38,22 @@ public class BookController {
    @Autowired(required=true)
    @Qualifier(value="BookService")
    public void setBookService(BookService ps){
-       this.BookService = ps;
+       this.bookService = ps;
    }
     
    
    @RequestMapping(value = "/Book/remove", method = RequestMethod.POST)
    public String removeAd(@RequestBody int  id) {
 	   
-       Book book  = this.BookService.getBookById(id);       
-       BookService.removeBook(book);
+       Book book  = this.bookService.getBookById(id);       
+       bookService.removeBook(book);
        return "/bookDoc";
    }
    
    @RequestMapping(value = "/Book/update", method = RequestMethod.POST)
    public String updateBook(@RequestBody Book  book) {
 	   
-	   BookService.updateBook(book);       
+	   bookService.updateBook(book);       
 	   return "/bookDoc";
    }
 }

@@ -11,7 +11,7 @@
  
          <context:component-scan base-package="com.med.controller" />
     
-    <mvc:view-controller path="/bookDoc" view-name="bookDoc"/>
+    <mvc:view-controller path="/livres" view-name="bookDoc"/>
     
     <!-- Resolves views selected for rendering by @Controllers to .jsp resources
         in the /WEB-INF/views directory -->
@@ -65,7 +65,7 @@
     </beans:bean>
     
     <beans:bean id="BookService" class="com.med.service.impl.BookServiceImpl">
-        <beans:property name="BookDao" ref="BookDAO"></beans:property>
+        <beans:property name="bookDao" ref="BookDAO"></beans:property>
     </beans:bean>
     
      
