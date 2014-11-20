@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Acceuil</a>
+                        <a href="#">Initiation pour le développement d'une application en java</a>
                     </li>
                 </ul>
             </div>

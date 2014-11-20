@@ -6,7 +6,7 @@ function Hello($scope, $http) {
     $scope.init = function () {
 
     	console.log('init');
-        $http.get('http://localhost:8081/bookApp/Books').
+        $http.get('http://localhost:8080/bookApp/Books').
         success(function(data) {
             $scope.books = data;
             console.log(data);
@@ -16,10 +16,8 @@ function Hello($scope, $http) {
 	 
 	 
     $scope.addBook = function () {
-        /* while compiling form , angular created this object*/
         var data=$scope.book;  
-        /* post to server*/
-        $http.post('http://localhost:8081/bookApp/Book/add', data).success(function(data) {
+        $http.post('http://localhost:8080/bookApp/Book/add', data).success(function(data) {
    		 $scope.init();
         });
         $scope.book = {};
@@ -30,7 +28,7 @@ function Hello($scope, $http) {
     
     $scope.removeBook = function (id) {
 
-    	 $http.post('http://localhost:8081/bookApp/Book/remove', id).success(function(data) {
+    	 $http.post('http://localhost:8080/bookApp/Book/remove', id).success(function(data) {
     		 $scope.init();
          });  
 	 
@@ -47,7 +45,7 @@ function Hello($scope, $http) {
     	
     	 var data=$scope.book;  
          /* post to server*/
-         $http.post('http://localhost:8081/bookApp/Book/update', data).success(function(data) {
+         $http.post('http://localhost:8080/bookApp/Book/update', data).success(function(data) {
     		 $scope.init();
          });
          $scope.book = {};
