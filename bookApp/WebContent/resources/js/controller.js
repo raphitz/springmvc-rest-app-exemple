@@ -5,11 +5,9 @@ function Hello($scope, $http) {
 	
     $scope.init = function () {
 
-    	console.log('init');
         $http.get('http://localhost:8080/bookApp/Books').
         success(function(data) {
             $scope.books = data;
-            console.log(data);
         });
 
     }

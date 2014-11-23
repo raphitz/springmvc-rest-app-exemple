@@ -1,12 +1,12 @@
 <!doctype html>
 <html ng-app>
 	<head>
-		<title>as</title>
+		<title>CRUD App</title>
  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/css.css">
      	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    	<script src="${pageContext.request.contextPath}/resources/js/hello.js"></script>
+    	<script src="${pageContext.request.contextPath}/resources/js/controller.js"></script>
     	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
 
@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">JPO SQLI</a>
+                <a class="navbar-brand" href="#">JPO</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -125,7 +125,7 @@
                         <input  ng-model="book.quantity" id="qte" value='' placeholder="quantité" type="text" class="form-control" />
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-danger btn-cancel-action" data-dismiss="modal">Quitter</button>
+                        <button class="btn btn-danger btn-cancel-action" data-dismiss="modal" ng-click="init()">Quitter</button>
                         <input type="submit" class="btn btn-primary" value="Modifer" />
                     </div>
                 </form>
@@ -181,7 +181,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Journée portes ouvertes 2014</p>
+                    <p>CRUD Application</p>
                 </div>
             </div>
             <!-- /.row -->
